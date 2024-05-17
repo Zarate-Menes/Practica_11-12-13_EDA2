@@ -4,7 +4,7 @@
 int main(){
 
     int i;
-    #pragma omp parallel //num_threads(8)
+    #pragma omp parallel private(i)//num_threads(8)
 	{
         //int i;
 		printf("Hola Mundo\n");
