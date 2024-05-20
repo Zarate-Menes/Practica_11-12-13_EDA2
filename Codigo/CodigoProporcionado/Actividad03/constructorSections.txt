@@ -1,0 +1,77 @@
+
+/*CONSTRUCTOR SECTIONS*/
+
+/*Este codigo divide o descompone el codigo en diferentes hilos, en 
+el que cada hilo hace diferentes seciones o funciones*/
+
+// Ejemplo como ejecutar de manera secuencial varias funciones
+void ejemplo(){
+
+    v = alfa();
+    w = beta();
+    x = gama(v,w);
+    y = delta();
+
+    printf("%6.2f\n", epsilon(x,y));
+
+}
+
+
+// Ejemplo, como ejecutar varias funciones de forma paralela con diferentes
+// hilos
+void ejemploH(){
+
+    #pragma omp parallel sections
+    {
+        #pragma omp section
+        {
+            v = alfa();
+        }
+
+        #pragma omp section
+        {
+            w = beta();
+        }
+
+        #pragma omp section
+        {
+            y = delta();
+        }
+    }
+
+    x = gama(v,w);
+    printf("%6.2f\n", epsilon(x,y));
+}
+
+
+// Ejemplo, otra forma de ejecutar varias funciones de forma paralela
+// ejecutando de dos en dos funciones o mas, de manera paralela
+
+void ejemploH(){
+
+    #pragma omp parallel
+    {
+        #pragma omp sections
+        {
+            v = alfa();
+        }
+        #pragma omp sections
+        {
+            w = beta();
+        }
+    }
+
+    #pragma omp sections
+    {
+        #pragma omp sections
+        {
+            x = gama(v,w);
+        }
+        #pragma omp sections
+        {
+            y = delta();
+        }
+    }
+
+    printf("%6.2f\n", epsilon(x,y));
+}
