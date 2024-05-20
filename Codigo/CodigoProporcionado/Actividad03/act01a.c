@@ -7,8 +7,7 @@
 
 #include <stdio.h>
 
-void buscarMax(void);
-
+void buscarMax(int arr[], int tam);
 
 int main(){
 
