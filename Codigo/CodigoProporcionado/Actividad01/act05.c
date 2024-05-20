@@ -16,10 +16,3 @@ int main(){
 }
 
 
-/*Para cambiar el numero de hilos desde consola
-
-export OMP_NUM_THREADS=n
-
-*/
-
-
