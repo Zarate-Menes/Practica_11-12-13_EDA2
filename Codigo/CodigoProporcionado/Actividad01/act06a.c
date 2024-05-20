@@ -19,6 +19,8 @@ int main(){
 
     suma(a, b, c);
 
+    printf("\n");
+
     return 0;
 }
 

@@ -42,8 +42,8 @@ void suma(int *A, int *B, int *C){
     #pragma omp parallel private(tid)
     {
         tid = omp_get_thread_num();
+        
         #pragma omp for
-
         for(i=0; i<n; i++)
         {
             C[i] = A[i]+B[i];

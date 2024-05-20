@@ -4,7 +4,7 @@
 #define n 10
 
 void llenarArreglo(int *a);
-void suma(int *a, int *b, int *c);
+void suma(int *A, int *B, int *C);
 
 int main(){
 
@@ -25,8 +25,7 @@ int main(){
 
 void llenarArreglo(int *a){
 
-    int i;
-    for(i=0; i<n; i++)
+    for(int i=0; i<n; i++)
     {
         a[i] = rand()%n;
         printf("%d\t", a[i]);
